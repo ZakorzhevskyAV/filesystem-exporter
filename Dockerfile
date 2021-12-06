@@ -1,0 +1,8 @@
+FROM python:3.8
+ENV MONITORING_PATH .
+ENV MONITORING_LABELS LABEL1=CATALOGSIZE;
+WORKDIR .
+COPY . .
+RUN python -m pip install -r requirements.txt
+RUN flask run
+EXPOSE 5000
